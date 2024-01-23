@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { createContext, useState,} from 'react'
 
-const SlidebarContext = () => {
+
+
+ export const SlidebarContext=createContext()
+
+
+ const SlidebarProvider = ({children}) => {
+
+  const [isOpen,setIsOpen]=useState(false);
+  
+  const handleClose =()=>{
+    setIsOpen(false)
+  }
   return (
-    <div>SlidebarContext</div>
+<SlidebarContext.Provider value={{isOpen,setIsOpen,handleClose}}>
+  {children}
+</SlidebarContext.Provider>
   )
 }
 
-export default SlidebarContext
+export default SlidebarProvider
