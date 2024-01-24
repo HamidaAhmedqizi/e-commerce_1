@@ -15,7 +15,7 @@ const Home = () => {
         )
     })
 
-    console.log(filteredProducts);
+    // console.log(filteredProducts);
     return (
         <div>
 <section className='py-20'>
